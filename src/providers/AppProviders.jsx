@@ -1,0 +1,13 @@
+import { BrowserRouter } from 'react-router-dom'
+import {ThemeProvider} from '../context/ThemeContext'
+
+ const AppProviders = ({children})=>{
+
+    return(
+        <ThemeProvider>
+            <BrowserRouter basename='/learnify'>{children}</BrowserRouter>
+        </ThemeProvider>
+    )
+}
+
+export default AppProviders

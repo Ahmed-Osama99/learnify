@@ -1,0 +1,62 @@
+[
+  {
+    "id": "web-camp",
+    "title": "The Complete Web Development Bootcamp 2032",
+    "category": "Web Development",
+    "instructor": "Sarah Johnson",
+    "review": { "stars": 4.8, "count": "46K" },
+    "enrolled": "235K",
+    "level": "All Levels",
+    "lessons": 478,
+    "price": 200,
+    "discount": 55,
+    "hoursCount": 65,
+    "image": "/images/courses/web-dev-bootcamp.jpg",
+    "instructorImage": "/images/instructors/sarah.jpg"
+  },
+  {
+    "id": "ml-ai",
+    "title": "Machine Learning A-Z: AI, Python & R",
+    "category": "Data Science",
+    "instructor": "Michael Chen",
+    "review": { "stars": 4.7, "count": "32K" },
+    "enrolled": "178K",
+    "level": "Intermediate",
+    "lessons": 312,
+    "price": 190,
+    "discount": 50,
+    "hoursCount": 44,
+    "image": "/images/courses/machine-learn.jpg",
+    "instructorImage": "/images/instructors/michael.jpg"
+  },
+  {
+    "id": "uiux",
+    "title": "UI/UX Design: The Complete Guide",
+    "category": "UI/UX Design",
+    "instructor": "Emily Rodriguez",
+    "review": { "stars": 4.9, "count": "19K" },
+    "enrolled": "89K",
+    "level": "Beginner",
+    "lessons": 245,
+    "price": 160,
+    "discount": 50,
+    "hoursCount": 38,
+    "image": "/images/courses/ui-ux.jpg",
+    "instructorImage": "/images/instructors/emily.jpg"
+  },
+  {
+    "id": "aws",
+    "title": "AWS Certified Solutions Architect 2032",
+    "category": "Cloud & DevOps",
+    "instructor": "David Kim",
+    "review": { "stars": 4.8, "count": "25K" },
+    "enrolled": "157K",
+    "level": "Intermediate",
+    "lessons": 380,
+    "price": 170,
+    "discount": 50,
+    "hoursCount": 52,
+    "image": "/images/courses/aws.jpg",
+    "instructorImage": "/images/instructors/david.jpg"
+  }
+]

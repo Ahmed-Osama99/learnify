@@ -1,0 +1,38 @@
+[
+  {
+    "id": "david-kim",
+    "name": "David Kim",
+    "image": "/images/instructors/david.jpg",
+    "title": "AWS Solution Architect",
+    "courses": 7,
+    "students": 38000,
+    "review": { "stars": 4.7, "nums": 5000 }
+  },
+  {
+    "id": "sarah-john",
+    "name": "Sarah Johnson",
+    "image": "/images/instructors/sarah.jpg",
+    "title": "Senior Software Engineer at Google",
+    "courses": 8,
+    "students": 89000,
+    "review": { "stars": 4.9, "nums": 12000 }
+  },
+  {
+    "id": "michael-chen",
+    "name": "Michael Chen",
+    "image": "/images/instructors/michael.jpg",
+    "title": "Data Science Lead at Netflix",
+    "courses": 6,
+    "students": 62000,
+    "review": { "stars": 4.8, "nums": 9000 }
+  },
+  {
+    "id": "emily-rodri",
+    "name": "Emily Rodriguez",
+    "image": "/images/instructors/emily.jpg",
+    "title": "Principal Designer at Airbnb",
+    "courses": 5,
+    "students": 45000,
+    "review": { "stars": 4.9, "nums": 7000 }
+  }
+]
