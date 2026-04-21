@@ -5,7 +5,7 @@ import {ThemeProvider} from '../context/ThemeContext'
 
     return(
         <ThemeProvider>
-            <BrowserRouter basename='/learnify'>{children}</BrowserRouter>
+            <BrowserRouter basename='/'>{children}</BrowserRouter>
         </ThemeProvider>
     )
 }
