@@ -72,7 +72,7 @@ const WhyUs = () => {
 
         <div className="video-box relative flex items-center justify-center">
           <img
-            src="/public/images/courses/aws.jpg"
+            src="/images/courses/aws.jpg"
             alt="Why Us video"
             className="rounded-3xl"
           />
@@ -85,17 +85,17 @@ const WhyUs = () => {
           <div className="absolute -bottom-10 left-1/2 flex w-full max-w-[300px] -translate-x-1/2 transform items-center gap-3 rounded-2xl bg-white p-6 shadow-2xl lg:-left-6 lg:translate-x-0 dark:bg-gray-800">
             <div className="flex">
               <img
-                src="/public/images/instructors/david.jpg"
+                src="/images/instructors/david.jpg"
                 alt="Student one"
                 className="h-10 w-10 rounded-full border-2 border-white"
               />
               <img
-                src="/public/images/instructors/emily.jpg"
+                src="/images/instructors/emily.jpg"
                 alt="Student two"
                 className="-ml-2 h-10 w-10 rounded-full border-2 border-white"
               />
               <img
-                src="/public/images/instructors/sarah.jpg"
+                src="/images/instructors/sarah.jpg"
                 alt="Student three"
                 className="-ml-2 h-10 w-10 rounded-full border-2 border-white"
               />
