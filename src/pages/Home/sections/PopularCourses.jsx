@@ -1,29 +1,12 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { getAllCourses } from "/src/services/courseService";
-import { useEffect, useState } from "react";
+import { getMostEnrolledCourses } from "/src/services/courseService";
 import CourseCard from "/src/components/CourseCard";
+import useFetch from "/src/hooks/useFetch";
 
 const PopularCourses = () => {
-  const [courses, setCourses] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchCourses() {
-      try {
-        const data = await getAllCourses();
-        setCourses(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchCourses();
-  }, []);
+  const { data: courses, error, isLoading } = useFetch(getMostEnrolledCourses);
 
   return (
     <section className="bg-gray-200 dark:bg-gray-900">

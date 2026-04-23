@@ -4,6 +4,8 @@ import { faSignal, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 
 const CourseCard = ({course}) => {
+    // this formatter will display numbers (5000) => (5K)
+  const formatter = Intl.NumberFormat("en", { notation: "compact" });
   return (
     <Link
       to="/"
@@ -57,7 +59,7 @@ const CourseCard = ({course}) => {
             </span>{" "}
             <span>({course.review.count})</span>
           </p>
-          <p>{course.enrolled} students</p>
+          <p>{formatter.format(course.enrolled)} students</p>
           <p className="flex items-center gap-1">
             <FontAwesomeIcon icon={faSignal} />
             {course.level}

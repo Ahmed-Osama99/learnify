@@ -7,11 +7,10 @@ const PageIntro = () => {
           <Link to="/" className="text-gray-500 hover:text-primary-500">
             Home{" "}
           </Link>{" "}
-          <span className="text-gray-500">/</span>
-          <Link to="/courses" className="font-medium">
-            {" "}
+          <span className="text-gray-500">/ </span>
+          <span className="font-medium">
             All Courses
-          </Link>
+          </span>
         </nav>
         <h1 className="font-display mt-6 text-4xl font-bold lg:text-5xl">
           All Courses
