@@ -16,3 +16,10 @@ export const getAllCategories = async () => {
   const categories = new Set(data.map((c) => c.category));
   return [...categories];
 };
+
+export const getCoursesByCategory = async (cat) => {
+  const data = await apiGet("courses");
+  const coursesWithCat = data.filter((c) => c.category === cat);
+
+  return coursesWithCat;
+};
