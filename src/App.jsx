@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -12,6 +13,7 @@ function App() {
         <Route element={<Courses />} path="/courses" />
       </Routes>
       <Footer />
+      <Analytics />
     </>
   );
 }
