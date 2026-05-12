@@ -6,19 +6,24 @@ export const getAllCourses = async () => {
 };
 
 export const getMostEnrolledCourses = async () => {
-  const data = await apiGet("courses");
+  const data = await getAllCourses();
   const bestCourses = data.sort((a, b) => b.enrolled - a.enrolled);
-  return bestCourses.slice(0, 4); // most 6 courses get enrolled
+  return bestCourses.slice(0, 4); // most 4 courses get enrolled
 };
 
 export const getAllCategories = async () => {
-  const data = await apiGet("courses");
-  const categories = new Set(data.map((c) => c.category));
-  return [...categories];
+  const data = await getAllCourses();
+  const map = new Map();
+  for (const course of data) {
+    map.set(course.category, (map.get(course.category) || 0) + 1);
+  }
+  return Array.from(map.entries(), ([name, count]) => ({ name, count })).sort(
+    (a, b) => b.count - a.count,
+  );
 };
 
 export const getCoursesByCategory = async (cat) => {
-  const data = await apiGet("courses");
+  const data = await getAllCourses();
   const coursesWithCat = data.filter((c) => c.category === cat);
 
   return coursesWithCat;

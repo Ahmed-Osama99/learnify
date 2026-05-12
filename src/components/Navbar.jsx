@@ -38,7 +38,7 @@ const Navbar = () => {
   });
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center border-b border-gray-200 bg-gray-100 px-2 md:px-8 lg:h-20 dark:border-gray-800 dark:bg-gray-950/95">
+    <header className="sticky top-0 z-10 flex h-16 items-center border-b border-gray-200 bg-gray-100/95 lg:h-20 dark:border-gray-800 dark:bg-gray-950/95">
       <div className="container flex items-center justify-between">
         <div className="flex gap-3 lg:gap-4">
           {/* Mobile Menu toggle */}
