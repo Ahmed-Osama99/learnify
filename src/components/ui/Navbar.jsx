@@ -151,7 +151,7 @@ const Navbar = () => {
         >
           <div
             ref={searchRef}
-            className={`mx-4 w-full max-w-2xl rounded-2xl bg-gray-200 p-4 dark:bg-gray-900`}
+            className={`mx-4 w-full max-w-2xl rounded-2xl bg-gray-300 p-4 dark:bg-gray-900`}
           >
             <div className="relative">
               <FontAwesomeIcon
@@ -167,28 +167,16 @@ const Navbar = () => {
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="text-sm text-gray-500">Popular :</span>
-              <Link
-                to="/courses?q=python"
-                className="rounded-full bg-gray-50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-900"
-              >
+              <Link to="/courses?q=python" className="small-card">
                 Python
               </Link>
-              <Link
-                to="/courses?q=react"
-                className="rounded-full bg-gray-50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-900"
-              >
+              <Link to="/courses?q=react" className="small-card">
                 React
               </Link>
-              <Link
-                to="/courses?q=machine-learning"
-                className="rounded-full bg-gray-50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-900"
-              >
+              <Link to="/courses?q=machine-learning" className="small-card">
                 Machine Learning
               </Link>
-              <Link
-                to="/courses?q=machine-learning"
-                className="rounded-full bg-gray-50 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-900"
-              >
+              <Link to="/courses?q=design" className="small-card">
                 Design
               </Link>
             </div>

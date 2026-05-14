@@ -11,17 +11,20 @@ import {
 } from "/src/services/courseService.js";
 import useFetch from "/src/hooks/useFetch";
 
-
 const Courses = () => {
   const location = useLocation();
   const urlCategory = new URLSearchParams(location.search).get("category");
+  const urlLevel = new URLSearchParams(location.search).get("level");
   const getCourses = urlCategory ? getCoursesByCategory : getAllCourses;
+
   const {
     data: coursesData,
     error: coursesError,
     isLoading: coursesLoading,
   } = useFetch(getCourses, urlCategory);
+
   const { data: categoryData } = useFetch(getAllCategories);
+
   return (
     <main>
       <PageIntro
@@ -31,7 +34,11 @@ const Courses = () => {
       />
       <div className="container flex flex-col gap-8 py-12 lg:flex-row">
         {/* filtering section */}
-        <FilterAside categoryData={categoryData} urlCategory={urlCategory} />
+        <FilterAside
+          categoryData={categoryData}
+          urlCategory={urlCategory}
+          urlLevel={urlLevel}
+        />
         {/* courses section */}
         <div className="lg:w-4/5">
           {coursesLoading && (

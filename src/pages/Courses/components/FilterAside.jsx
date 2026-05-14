@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const FilterAside = ({ categoryData, urlCategory }) => {
+const FilterAside = ({ categoryData, urlCategory,urlLevel }) => {
   return (
     <aside className="py-4 lg:w-1/5">
       <div className="sticky top-24">
@@ -23,6 +23,22 @@ const FilterAside = ({ categoryData, urlCategory }) => {
               <span>({cat.count})</span>
             </Link>
           ))}
+        </div>
+        {/* levels */}
+        <h3 className="mb-2 text-lg font-bold">Level</h3>
+        <div className="flex flex-wrap gap-2">
+          <Link to="/courses" className={`small-card ${!urlLevel && '!bg-primary-600 !text-white'}`}>
+            All Levels
+          </Link>
+          <Link to="/courses?level=beginner" className="small-card">
+            Beginner
+          </Link>
+          <Link to="/courses?level=intermediate" className="small-card">
+            Intermediate
+          </Link>
+          <Link to="/courses?level=advanced" className="small-card">
+            Advanced
+          </Link>
         </div>
       </div>
     </aside>
