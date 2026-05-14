@@ -1,5 +1,5 @@
-import PageIntro from "/src/components/PageIntro";
-import CategoryCard from "../components/CategoryCard";
+import PageIntro from "/src/components/ui/PageIntro";
+import CategoryCard from "/src/components/ui/CategoryCard";
 import {
   faMobileScreen,
   faSwatchbook,

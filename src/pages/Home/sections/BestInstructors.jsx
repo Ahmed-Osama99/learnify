@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import InstructorCard from "/src/components/InstructorCard";
+import InstructorCard from "/src/components/ui/InstructorCard";
 
 const BestInstructors = () => {
   const [instructors, setInstructors] = useState([]);

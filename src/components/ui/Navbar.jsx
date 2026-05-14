@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useClickOutside } from "../hooks/useClickOutside.js";
+import { useClickOutside } from "../../hooks/useClickOutside.js";
 import {
   faBars,
   faXmark,
@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import Backdrop from "./Backdrop";
-import { useTheme } from "../hooks/useTheme.js";
+import { useTheme } from "../../hooks/useTheme.js";
 
 const navLinks = [
   { to: "/courses", title: "Courses" },

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { getMostEnrolledCourses } from "/src/services/courseService";
-import CourseCard from "/src/components/CourseCard";
+import CourseCard from "/src/components/ui/CourseCard";
 import useFetch from "/src/hooks/useFetch";
 
 const PopularCourses = () => {

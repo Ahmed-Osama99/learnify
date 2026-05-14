@@ -1,5 +1,5 @@
 import HeroSection from "./sections/HeroSection";
-import CategorySection from "/src/components/CategorySection";
+import CategorySection from "/src/components/ui/CategorySection";
 import PopularCourses from "./sections/PopularCourses";
 import WhyUs from "./sections/WhyUs";
 import BestInstructors from "./sections/BestInstructors";

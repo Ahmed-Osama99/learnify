@@ -1,11 +1,11 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/ui/Navbar";
+import Footer from "./components/ui/Footer";
 import Home from "./pages/Home/Home";
 import Courses from "./pages/Courses/Courses";
-import Categories from "./pages/Categories";
+import Categories from "./pages/categories/Categories";
 function App() {
   return (
     <>
