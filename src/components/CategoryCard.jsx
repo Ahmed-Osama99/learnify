@@ -2,10 +2,10 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const CategoryCard = ({ icon, title, desc, courseNum, iconStyle }) => {
+const CategoryCard = ({ icon, title, desc, courseNum, iconStyle,path }) => {
   return (
     <Link
-      to="/"
+      to={path}
       className="group rounded-xl border border-gray-300 p-6 transition-all hover:border-primary-300 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900 dark:hover:border-primary-800"
     >
       {/* Category icon */}

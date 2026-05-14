@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import Courses from "./pages/Courses/Courses";
+import Categories from "./pages/Categories";
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route element={<Home />} path="/" />
         <Route element={<Courses />} path="/courses" />
+        <Route element={<Categories />} path="/categories" />
       </Routes>
       <Footer />
       <Analytics />

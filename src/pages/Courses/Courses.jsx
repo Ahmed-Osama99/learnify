@@ -6,11 +6,11 @@ import {
   getCoursesByCategory,
 } from "/src/services/courseService.js";
 import CourseCard from "/src/components/CourseCard";
+import CourseCardSkeleton from "../../components/ui/CourseCardSkeleton";
 import useFetch from "/src/hooks/useFetch";
 const Courses = () => {
   const location = useLocation();
   const category = new URLSearchParams(location.search).get("category");
-  console.log(category);
   const getCourses = category ? getCoursesByCategory : getAllCourses;
   const {
     data: coursesData,
@@ -20,7 +20,11 @@ const Courses = () => {
   const { data: categoryData } = useFetch(getAllCategories);
   return (
     <main>
-      <PageIntro />
+      <PageIntro
+        pageName="Courses"
+        pageTitle="All Courses"
+        pageDesc={`${!coursesLoading ? `${coursesData.length} courses avaliable` : ""}`}
+      />
       <div className="container flex flex-col gap-8 py-12 lg:flex-row">
         {/* filtering section */}
         <aside className="py-4 lg:w-1/5">
@@ -50,9 +54,11 @@ const Courses = () => {
         {/* courses section */}
         <div className="lg:w-4/5">
           {coursesLoading && (
-            <p className="mt-10 text-center text-xl font-bold">
-              Loading courses...
-            </p>
+            <div className="mt-12 grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <CourseCardSkeleton key={i} />
+              ))}
+            </div>
           )}
           {coursesError && (
             <p className="mt-10 text-center text-xl font-bold">

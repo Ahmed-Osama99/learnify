@@ -66,16 +66,15 @@ const Footer = () => {
           <div className="col-span-2">
             <h3 className="mb-4">Categories</h3>
             <div className="grid grid-cols-2 gap-y-2">
-              {categoryData &&
-                categoryData.map((cat) => (
-                  <Link
-                    key={cat.name}
-                    to={`/courses?category=${cat.name}`}
-                    className="text-gray-600 hover:text-primary-600 dark:text-gray-400"
-                  >
-                    {cat.name}
-                  </Link>
-                ))}
+              {categoryData?.map((cat) => (
+                <Link
+                  key={cat.name}
+                  to={`/courses?category=${cat.name}`}
+                  className="text-gray-600 hover:text-primary-600 dark:text-gray-400"
+                >
+                  {cat.name}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="flex flex-col gap-3">
