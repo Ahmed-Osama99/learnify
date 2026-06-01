@@ -1,13 +1,14 @@
-import { BrowserRouter } from 'react-router-dom'
-import {ThemeProvider} from '../context/ThemeContext'
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "../context/ThemeContext";
+import { HelmetProvider } from "react-helmet-async";
+const AppProviders = ({ children }) => {
+  return (
+    <HelmetProvider>
+      <ThemeProvider>
+        <BrowserRouter basename="/">{children}</BrowserRouter>
+      </ThemeProvider>
+    </HelmetProvider>
+  );
+};
 
- const AppProviders = ({children})=>{
-
-    return(
-        <ThemeProvider>
-            <BrowserRouter basename='/'>{children}</BrowserRouter>
-        </ThemeProvider>
-    )
-}
-
-export default AppProviders
+export default AppProviders;

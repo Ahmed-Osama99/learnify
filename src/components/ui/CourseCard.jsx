@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignal, faStar } from "@fortawesome/free-solid-svg-icons";
 import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 
-const CourseCard = ({course}) => {
-    // this formatter will display numbers (5000) => (5K)
+const CourseCard = ({ course }) => {
+  // this formatter will display numbers (5000) => (5K)
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
   return (
     <Link
@@ -33,7 +33,7 @@ const CourseCard = ({course}) => {
           {course.category}
         </p>
         {/* title */}
-        <h4 className="mt-4 text-xl font-display line-clamp-2 transition-colors group-hover:text-primary-600">
+        <h4 className="font-display mt-4 line-clamp-2 text-xl transition-colors group-hover:text-primary-600">
           {course.title}{" "}
         </h4>
         {/* instructor */}
@@ -54,13 +54,13 @@ const CourseCard = ({course}) => {
               size="xs"
               className="text-yellow-500"
             />
-            <span className="text-gray-900 dark:text-gray-100 font-semibold">
+            <span className="font-semibold text-gray-900 dark:text-gray-100">
               {course.review.stars}
             </span>{" "}
             <span>({course.review.count})</span>
           </p>
           <p>{formatter.format(course.enrolled)} students</p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center gap-1 capitalize">
             <FontAwesomeIcon icon={faSignal} />
             {course.level}
           </p>
@@ -71,11 +71,19 @@ const CourseCard = ({course}) => {
         </div>
         {/* price */}
         <div className="mt-4 flex items-center gap-3 border-t border-gray-300 pt-4 dark:border-gray-800">
-          <p className="text-lg font-semibold">${Math.floor((course.price * course.discount) / 100)}</p>
-          <p className="text-sm text-gray-600 line-through dark:text-gray-500">
-            {" "}
-            ${course.price}
-          </p>
+          {course.price === 0 ? (
+            <p>Free</p>
+          ) : (
+            <>
+              <p className="text-lg font-semibold">
+                ${Math.floor((course.price * course.discount) / 100)}
+              </p>
+              <p className="text-sm text-gray-600 line-through dark:text-gray-500">
+                {" "}
+                ${course.price}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </Link>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import PageIntro from "/src/components/ui/PageIntro";
 import CategoryCard from "/src/components/ui/CategoryCard";
 import {
@@ -80,28 +81,33 @@ const categoryData = [
 
 const Categories = () => {
   return (
-    <main>
-      <PageIntro
-        pageName="Categories"
-        pageTitle="Course Categories"
-        pageDesc="Find your perfect learning path from our wide selection of categories."
-      />
-      <div className="container flex flex-col gap-8 py-12 lg:flex-row">
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {categoryData.map((cat) => (
-            <CategoryCard
-              path={`/courses?category=${cat.title}`}
-              key={cat.id}
-              title={cat.title}
-              icon={cat.icon}
-              desc={cat.desc}
-              iconStyle={cat.styleClass}
-              courseNum={cat.numOfCourses}
-            />
-          ))}
+    <>
+      <Helmet>
+        <title>Categories | Learnify</title>
+      </Helmet>
+      <main>
+        <PageIntro
+          pageName="Categories"
+          pageTitle="Course Categories"
+          pageDesc="Find your perfect learning path from our wide selection of categories."
+        />
+        <div className="container flex flex-col gap-8 py-12 lg:flex-row">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {categoryData.map((cat) => (
+              <CategoryCard
+                path={`/courses?category=${cat.title}`}
+                key={cat.id}
+                title={cat.title}
+                icon={cat.icon}
+                desc={cat.desc}
+                iconStyle={cat.styleClass}
+                courseNum={cat.numOfCourses}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 

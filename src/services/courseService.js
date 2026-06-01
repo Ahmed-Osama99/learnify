@@ -28,3 +28,17 @@ export const getCoursesByCategory = async (cat) => {
 
   return coursesWithCat;
 };
+
+export const getCoursesByLevel = async (level) => {
+  const data = await getAllCourses();
+  const coursesByLevel = data.filter((c) => c.level === level);
+
+  return coursesByLevel;
+};
+
+export const getCoursesByPrice = async (price) => {
+  const data = await getAllCourses();
+  const coursesByPrice = data.filter((c) => c.price === price);
+
+  return coursesByPrice;
+};
