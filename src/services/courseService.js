@@ -1,5 +1,5 @@
 import { apiGet } from "./apiClient";
-
+import { PRICE_MAP } from "../config/priceRanges";
 // GET ALL Courses
 export const getAllCourses = async () => {
   return apiGet("courses");
@@ -36,9 +36,14 @@ export const getCoursesByLevel = async (level) => {
   return coursesByLevel;
 };
 
-export const getCoursesByPrice = async (price) => {
+export const getCoursesByPriceRange = async (selectedIDs) => {
   const data = await getAllCourses();
-  const coursesByPrice = data.filter((c) => c.price === price);
+  const coursesByPrice =
+    !selectedIDs || selectedIDs.length === 0
+      ? data
+      : data.filter((c) =>
+          selectedIDs.some((id) => PRICE_MAP.get(id)?.(c.price)),
+        );
 
   return coursesByPrice;
 };

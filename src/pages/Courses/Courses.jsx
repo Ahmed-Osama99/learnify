@@ -9,7 +9,7 @@ import {
   getAllCategories,
   getCoursesByCategory,
   getCoursesByLevel,
-  getCoursesByPrice,
+  getCoursesByPriceRange,
 } from "/src/services/courseService.js";
 import useFetch from "/src/hooks/useFetch";
 import { Helmet } from "react-helmet-async";
@@ -20,21 +20,24 @@ const Courses = () => {
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category");
   const urlLevel = params.get("level");
-  const [price, setPrice] = useState();
-  const activeParam = urlCategory || urlLevel || price;
+  const [selectedPriceIDs, setSelectedPriceIDs] = useState([]);
+  const activeParam =
+    urlCategory ||
+    urlLevel ||
+    (selectedPriceIDs.length > 0 ? selectedPriceIDs : undefined);
 
-  const getCourses = useMemo(() => {
+  const getCoursesFn = useMemo(() => {
     if (urlCategory) return getCoursesByCategory;
     if (urlLevel) return getCoursesByLevel;
-    if (price || price === 0) return getCoursesByPrice;
+    if (selectedPriceIDs.length > 0) return getCoursesByPriceRange;
     return getAllCourses;
-  }, [urlCategory, urlLevel, price]);
+  }, [urlCategory, urlLevel, selectedPriceIDs]);
 
   const {
     data: coursesData,
     error: coursesError,
     isLoading: coursesLoading,
-  } = useFetch(getCourses, activeParam);
+  } = useFetch(getCoursesFn, activeParam);
 
   const { data: categoryData } = useFetch(getAllCategories);
 
@@ -55,7 +58,7 @@ const Courses = () => {
             categoryData={categoryData}
             urlCategory={urlCategory}
             urlLevel={urlLevel}
-            priceState={setPrice}
+            onPriceChange={setSelectedPriceIDs}
           />
           {/* courses section */}
           <div className="lg:w-4/5">
