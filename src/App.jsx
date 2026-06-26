@@ -6,6 +6,7 @@ import Footer from "./components/ui/Footer";
 import Home from "./pages/Home/Home";
 import Courses from "./pages/Courses/Courses";
 import Categories from "./pages/categories/Categories";
+import Instructors from "./pages/Instructors/Instructors";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
         <Route element={<Home />} path="/" />
         <Route element={<Courses />} path="/courses" />
         <Route element={<Categories />} path="/categories" />
+        <Route element={<Instructors />} path="/instructors" />
       </Routes>
       <Footer />
       <Analytics />
