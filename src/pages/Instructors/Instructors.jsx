@@ -54,6 +54,16 @@ const Instructors = () => {
                         ))}
                     </div>
                 </div>
+                <div className="text-center py-10 bg-primary-600">
+                        <h3 className="font-display mt-6 text-3xl font-bold lg:text-4xl text-white">Become an Instructor</h3>
+                        <p className="mx-auto max-w-2xl text-white mt-4">
+                            Share your knowledge with millions of students around the world. Join our community of expert instructors.
+                        </p>
+                        <Link to="/" className="cta-btn w-fit mx-auto mt-6">
+                            Start Learning Free
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </Link>
+                </div>
             </main>
         </>
     )
