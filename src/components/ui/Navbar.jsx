@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useClickOutside } from "../../hooks/useClickOutside.js";
 import {
@@ -16,7 +17,6 @@ const navLinks = [
   { to: "/courses", title: "Courses" },
   { to: "/categories", title: "Categories" },
   { to: "/instructors", title: "Instructors" },
-  { to: "/pricing", title: "Pricing" },
   { to: "/about", title: "About" },
 ];
 
@@ -75,6 +75,13 @@ const Navbar = () => {
               {link.title}
             </NavLink>
           ))}
+          <HashLink
+            smooth
+            to="/#pricing"
+            className="text-sm font-medium text-gray-700 transition-colors hover:text-primary-600 dark:text-gray-300"
+          >
+            Pricing
+          </HashLink>
         </nav>
         {/* Actions */}
         <div className="flex items-center gap-2 md:gap-3">
@@ -93,7 +100,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={theme === "dark" ? faSun : faMoon} />
           </button>
           <Link
-            to="/"
+            to="/login"
             className="hidden text-sm font-medium text-gray-700 hover:text-primary-600 md:block dark:text-gray-300"
           >
             Sign In

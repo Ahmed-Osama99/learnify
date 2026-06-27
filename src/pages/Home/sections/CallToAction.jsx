@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 const CallToAction = () => {
   return (
-    <section className="relative !py-20 bg-primary-600">
+    <section className="relative bg-primary-600 !py-20">
       {/* background */}
       <div className="square-gradient absolute inset-0"></div>
       <div className="relative container text-center text-gray-50">
