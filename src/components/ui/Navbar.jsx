@@ -106,7 +106,7 @@ const Navbar = () => {
             Sign In
           </Link>
           <Link
-            to="/"
+            to="/signup"
             className="rounded-full bg-primary-600 p-[12px] text-xs font-semibold text-white shadow-lg shadow-primary-500/30 transition-colors hover:bg-primary-700 hover:shadow-primary-500/40 md:px-5 md:py-2.5 md:text-sm"
           >
             Get Started
@@ -136,13 +136,15 @@ const Navbar = () => {
           ))}
           <div className="mt-4 border-t border-gray-200 pt-4 dark:border-gray-800">
             <Link
-              to="/"
+              to="/login"
+              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
               className="block rounded-lg p-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-900"
             >
               Sign In
             </Link>
             <Link
-              to="/"
+              to="/signup"
+              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
               className="mt-4 block rounded-lg bg-primary-600 p-3 text-center font-semibold text-white transition-colors hover:bg-primary-700"
             >
               Get Started Free

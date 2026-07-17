@@ -47,7 +47,10 @@
 ::selection {
   @apply bg-primary-200 text-primary-900;
 }
-
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
 section {
   @apply py-20 lg:py-32;
 }
@@ -55,7 +58,7 @@ section {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 .container {
-  @apply mx-auto max-w-7xl px-4 lg:px-8;
+  @apply mx-auto w-full max-w-7xl px-4 lg:px-8;
 }
 .header-btn {
   @apply rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800;
@@ -66,7 +69,9 @@ section {
 .cta-btn {
   @apply flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-primary-600 shadow-xl transition-all hover:bg-gray-100 hover:shadow-2xl sm:gap-3;
 }
-
+.primary-btn {
+  @apply mt-8 w-full cursor-pointer rounded-full bg-primary-600 py-4 font-semibold text-gray-50 shadow-lg shadow-primary-500/30 transition hover:bg-primary-700 hover:shadow-xl;
+}
 .small-card {
   @apply rounded-full bg-gray-200 px-3 py-1 text-sm text-gray-800 transition-colors hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-900;
 }

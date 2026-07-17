@@ -43,7 +43,7 @@ const PricingCard = ({ plan, isYearly }) => {
         ))}
       </ul>
       <button
-        className={`mt-8 w-full cursor-pointer rounded-full py-4 font-semibold transition ${plan.highlighted ? "bg-primary-600 text-gray-50 shadow-lg shadow-primary-500/30 hover:bg-primary-700 hover:shadow-xl" : "border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-200/50 dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-800"}`}
+        className={`mt-8 w-full cursor-pointer rounded-full py-4 font-semibold transition ${plan.highlighted ? "primary-btn" : "border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-200/50 dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-800"}`}
       >
         {plan.buttonText}
       </button>
