@@ -52,7 +52,7 @@
   outline-offset: 2px;
 }
 section {
-  @apply py-20 lg:py-32;
+  @apply py-21 lg:py-33;
 }
 .font-display {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;

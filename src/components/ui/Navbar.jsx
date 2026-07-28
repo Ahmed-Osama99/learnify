@@ -17,6 +17,7 @@ const navLinks = [
   { to: "/courses", title: "Courses" },
   { to: "/categories", title: "Categories" },
   { to: "/instructors", title: "Instructors" },
+  { to: "/#pricing", title: "Pricing" },
   { to: "/about", title: "About" },
 ];
 
@@ -66,22 +67,26 @@ const Navbar = () => {
         </div>
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className="text-sm font-medium text-gray-700 transition-colors hover:text-primary-600 dark:text-gray-300"
-            >
-              {link.title}
-            </NavLink>
-          ))}
-          <HashLink
-            smooth
-            to="/#pricing"
-            className="text-sm font-medium text-gray-700 transition-colors hover:text-primary-600 dark:text-gray-300"
-          >
-            Pricing
-          </HashLink>
+          {navLinks.map((link) =>
+            link.to.includes("#") ? (
+              <HashLink
+                key={link.to}
+                smooth
+                to={link.to}
+                className="text-sm font-medium text-gray-700 transition-colors hover:text-primary-600 dark:text-gray-300"
+              >
+                {link.title}
+              </HashLink>
+            ) : (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className="text-sm font-medium text-gray-700 transition-colors hover:text-primary-600 dark:text-gray-300"
+              >
+                {link.title}
+              </NavLink>
+            ),
+          )}
         </nav>
         {/* Actions */}
         <div className="flex items-center gap-2 md:gap-3">
@@ -124,27 +129,39 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={faXmark} size="lg" />
           </button>
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
-              className="block rounded-lg p-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:text-gray-50 dark:hover:bg-gray-900"
-            >
-              {link.title}
-            </NavLink>
-          ))}
+          {navLinks.map((link) =>
+            link.to.includes("#") ? (
+              <HashLink
+                className="block rounded-lg p-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:text-gray-50 dark:hover:bg-gray-900"
+                key={link.to}
+                smooth
+                onClick={() => setIsSideNavOpen(false)}
+                to={link.to}
+              >
+                {link.title}
+              </HashLink>
+            ) : (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                onClick={() => setIsSideNavOpen(false)}
+                className="block rounded-lg p-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:text-gray-50 dark:hover:bg-gray-900"
+              >
+                {link.title}
+              </NavLink>
+            ),
+          )}
           <div className="mt-4 border-t border-gray-200 pt-4 dark:border-gray-800">
             <Link
               to="/login"
-              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
+              onClick={() => setIsSideNavOpen(false)}
               className="block rounded-lg p-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-900"
             >
               Sign In
             </Link>
             <Link
               to="/signup"
-              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
+              onClick={() => setIsSideNavOpen(false)}
               className="mt-4 block rounded-lg bg-primary-600 p-3 text-center font-semibold text-white transition-colors hover:bg-primary-700"
             >
               Get Started Free

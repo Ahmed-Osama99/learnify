@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import googleIcon from '/src/google-svg.svg'
+import googleIcon from "/src/google-svg.svg";
 
 const SignIn = () => {
   const [isPasswordVisiable, setIsPasswordVisiable] = useState(false);
@@ -17,7 +18,7 @@ const SignIn = () => {
         <title>Sign In | Learnify</title>
       </Helmet>
       <main>
-        <section className="mx-auto w-full max-w-md! px-4">
+        <section className="mx-auto w-full max-w-md! px-4 py-16!">
           {/* logo */}
           <div className="mx-auto text-center">
             <img
@@ -112,21 +113,28 @@ const SignIn = () => {
             {/* Divider */}
             <div className="my-6 flex items-center">
               <div className="h-px flex-1 bg-gray-400 dark:bg-gray-600"></div>
-              <span className="px-4 text-gray-600 dark:text-gray-400">or continue with</span>
+              <span className="px-4 text-gray-600 dark:text-gray-400">
+                or continue with
+              </span>
               <div className="h-px flex-1 bg-gray-400 dark:bg-gray-600"></div>
             </div>
             {/* social login*/}
-            <div className="flex items-center gap-3 justify-center">
-              <button className="rounded-2xl border border-gray-400 py-3 px-8 flex items-center justify-center gap-2 flex-1">
-                <img src={googleIcon} alt="Google icon" className="w-6"/>
+            <div className="text-md flex items-center justify-center gap-3 font-medium">
+              <button className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-gray-400 px-8 py-3 transition-colors hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img src={googleIcon} alt="Google icon" className="w-6" />
                 <span>Google</span>
               </button>
-              <button className="rounded-2xl border border-gray-400 py-3 px-8 flex items-center justify-center gap-2 flex-1">
-                <FontAwesomeIcon icon={faGithub}/>
-                <span>Github</span>
+              <button className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-gray-400 px-8 py-3 transition-colors hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <FontAwesomeIcon size="lg" icon={faGithub} />
+                <span>GitHub</span>
               </button>
             </div>
           </div>
+          {/* sign up CTA */}
+          <p className="mt-8 text-center text-md dark:text-gray-400 text-gray-700">
+            Don&apos;t have an account?{" "}
+            <Link to="/signup" className="font-semibold text-primary-600 hover:text-primary-700 dark:hover:text-primary-500">Sign up for free</Link>
+          </p>
         </section>
       </main>
     </>
