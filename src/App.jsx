@@ -9,6 +9,7 @@ import Courses from "./pages/Courses/Courses";
 import Categories from "./pages/categories/Categories";
 import Instructors from "./pages/Instructors/Instructors";
 import SignIn from "./pages/Sign in/SignIn";
+import SignUp from "./pages/Signup/SignUp";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
         <Route element={<Categories />} path="/categories" />
         <Route element={<Instructors />} path="/instructors" />
         <Route element={<SignIn/>} path="/login"/>
+        <Route element={<SignUp/>} path="/signup"/>
       </Routes>
       <Footer />
       <Analytics />
